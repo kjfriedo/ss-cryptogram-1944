@@ -1,0 +1,60 @@
+Length: 575
+metric            cryptogram      german    vigenere
+chi2_uniform         186.325     693.845     104.572   shuffled=186.325
+IC                     0.049       0.083       0.044   shuffled=0.049
+entropy                4.429       3.958       4.572   shuffled=4.429
+alphabet              25.000      22.000      26.000   shuffled=25.000
+MI_digram              1.478       1.166       1.054   shuffled=0.729
+adjacent_keys          0.526       0.176       0.139   shuffled=0.172
+key_distance           1.552       2.974       3.113   shuffled=2.568
+doubles               22.000      16.000      27.000   shuffled=28.520
+aba                   32.000      32.000      12.000   shuffled=28.400
+left_hand              0.710       0.638       0.617   shuffled=0.710
+runs_z               -12.055       0.044      -1.471   shuffled=-0.061
+rep3                 130.000     190.000      42.000   shuffled=18.837
+rep4                  43.000      75.000       6.000   shuffled=0.917
+bz2                    0.640       0.586       0.697   shuffled=0.687
+ApEn2                  0.861       1.080       0.643   shuffled=0.669
+
+Permutation tests (2000 shuffles of the same letters), z-score and one-sided p-value (greater):
+  adjacent_keys    obs=   0.526 null=   0.171± 0.016 z=  22.47 p=0.0005
+  -key_distance    obs=  -1.552 null=  -2.572± 0.053 z=  19.34 p=0.0005
+  MI_digram        obs=   1.478 null=   0.727± 0.031 z=  23.98 p=0.0005
+  aba              obs=  32.000 null=  28.398± 5.089 z=   0.71 p=0.2724
+  rep3             obs= 130.000 null=  18.883± 4.304 z=  25.81 p=0.0005
+  rep4             obs=  43.000 null=   0.927± 1.024 z=  41.09 p=0.0005
+  -bz2             obs=  -0.640 null=  -0.687± 0.005 z=  10.01 p=0.0005
+  -ApEn2           obs=  -0.861 null=  -0.669± 0.020 z=  -9.58 p=1.0000
+
+Kappa (coincidences at shift k); expected for random text = sum p_i^2:
+  1:0.038 2:0.056 3:0.031 4:0.040 5:0.030 6:0.021 7:0.035 8:0.030 9:0.049 10:0.042 11:0.050 12:0.057 13:0.062 14:0.064 15:0.059 16:0.048 17:0.059 18:0.047 19:0.045 20:0.054   ref=0.051
+
+Mean column IC at period p (Vigenere test):
+  1:0.049 2:0.049 3:0.048 4:0.049 5:0.048 6:0.048 7:0.048 8:0.050 9:0.049 10:0.050 11:0.051 12:0.048 13:0.050 14:0.049 15:0.047 16:0.051 17:0.054
+
+Most frequent bigrams: cx16 tz11 rf10 dc9 zh9 fg9 zt9 xy9 re9 ed8 hb8 vc8 tr8 xc8 rt7
+Most frequent trigrams: xys6 tzh5 ews5 red5 zhb4 bvc4 cxd4 erf4 cxy4 ztr4 tre4 vcv4 dcx4 fdc3 rtz3
+Frequencies: c45 s40 t37 r37 f36 d36 z36 e31 x31 h30 b23 v23 y23 u22 g22 a15 j15 k14 i13 n12 w9 o8 m8 l5 p4
+
+Keyboard-mashing model (random walk on QWERTZ, 68 % step to an adjacent key), mean of 200 runs:
+  chi2_uniform     model= 168.877   cryptogram= 186.325
+  IC               model=   0.048   cryptogram=   0.049
+  entropy          model=   4.453   cryptogram=   4.429
+  alphabet         model=  25.825   cryptogram=  25.000
+  MI_digram        model=   2.046   cryptogram=   1.478
+  adjacent_keys    model=   0.730   cryptogram=   0.526
+  key_distance     model=   1.569   cryptogram=   1.552
+  doubles          model=   8.825   cryptogram=  22.000
+  aba              model= 127.285   cryptogram=  32.000
+  left_hand        model=   0.792   cryptogram=   0.710
+  runs_z           model= -12.318   cryptogram= -12.055
+  rep3             model= 191.455   cryptogram= 130.000
+  rep4             model=  70.220   cryptogram=  43.000
+  bz2              model=   0.595   cryptogram=   0.640
+  ApEn2            model=   0.981   cryptogram=   0.861
+
+Consistency by block (adjacent keys / IC / left hand):
+  block1: 0.462 / 0.0436 / 0.652
+  block2: 0.574 / 0.0503 / 0.725
+  block3: 0.548 / 0.0530 / 0.759
+Adjacent-key transitions across line ends: 6/34 (within lines 0.55)
