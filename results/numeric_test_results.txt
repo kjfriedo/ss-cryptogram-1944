@@ -1,0 +1,17 @@
+Digits: 542 in 41 lines; '0' occurs 0 times
+Frequencies: I:100 2:35 3:57 4:66 5:72 6:70 7:55 8:53 9:34 0:0
+Chi2 vs uniform over 10 digits (df=9): 120.4   IC=0.1206 (uniform 0.100)
+
+Permutation tests (3000 shuffles of the same digits, line lengths kept):
+  adjacent keys, I = key 'i' (under 8/9)     obs=  0.561 null=  0.321± 0.021 z= 11.69 p=0.0003
+  adjacent keys, I = digit 1                 obs=  0.547 null=  0.310± 0.020 z= 11.68 p=0.0003
+  -mean key distance, I = key 'i'            obs= -1.921 null= -2.517± 0.070 z=  8.46 p=0.0003
+  numeric step |d|=1 (I=1)                   obs=  0.431 null=  0.188± 0.017 z= 14.52 p=0.0003
+  runs of 4 consecutive +-1 steps            obs= 25.000 null=  0.804± 0.955 z= 25.33 p=0.0003
+
+Adjacent across line ends (I=key i): 11/40 = 0.28  vs within lines 0.56
+Neighbours of I (excluding I): 2:9 3:14 4:16 5:11 6:12 7:15 8:16 9:14 0:0
+  expected share if random:     2:8.5 3:13.8 4:16.0 5:17.4 6:16.9 7:13.3 8:12.8 9:8.2 0:0.0
+Doubled I ('II') count: 37
+
+Per-part adjacency (I=key i): top 0.50, block1 0.53, block2 0.57, block3 0.64

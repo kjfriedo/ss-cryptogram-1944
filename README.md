@@ -24,6 +24,27 @@ explanation is keyboard mashing on a typewriter: filler, a decoy or a typing tes
 - **Line breaks reset the pattern.** Adjacent-key pairs make up 54 % within lines but only 6 of 34 (≈ 18 %) across line ends, so each line is a separate hand movement.
 - **Robust to the uncertain readings.** Reading the uncertain `[i|f]` glyphs as `f` does not change the result (52.6 % adjacent keys, z ≈ 22.5).
 
+## Second document: numeric "cipher" (UHG. Yc. 002)
+
+Bogusław Wróbel supplied a second sheet from the same series: 542 typed digits in three blocks, plus a small
+"key table" (`Ya. I00`, digit pairs and the letter pairs `FF ZT AA / RT RE IU`). It shows the same keyboard
+signature, this time on the typewriter's number row:
+
+| Test (542 digits) | Document | Shuffled digits (3,000×) |
+|---|---|---|
+| Digit 0 | never occurs | expected ≈ 54 if uniform |
+| Steps of ±1 (e.g. `8765`, `2323`) | 43 % | 19 % (z ≈ 15) |
+| Runs of four consecutive ±1 steps | 25 | 0.8 (z ≈ 25) |
+| Adjacent keys | 56 % | 32 % (z ≈ 12) |
+| Adjacent keys across line ends | 28 % (11 of 40) | 32 % |
+
+- The digits cluster in the middle of the row (4–6), and 0, at the far right, is absent.
+- A numeric additive cipher or code would give near-uniform digits including 0.
+- As with the letters, the pattern resets at every line break.
+- The typewriter has no `1` key, so 1 is typed as a capital `I`. That fits a period machine and is not evidence of a forgery.
+
+See `data/numeric_transcription.md`, `analysis/numeric_tests.py` and `results/numeric_test_results.txt`.
+
 ## Contents
 
 | Path | Description |
