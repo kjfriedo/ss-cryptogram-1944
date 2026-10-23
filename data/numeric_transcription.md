@@ -1,6 +1,8 @@
-# Second document: numeric "cipher" (UHG. Yc. 002) – transcription
+# Upper part of the document: numbers (UHG. Yc. 002) – transcription
 
-Source: image and Word transcription (`Szyfr górna część`) supplied by Bogusław Wróbel, 23 Oct 2026.
+Source: image and Word transcription (*Szyfr – górna część*, "cipher – upper part") that Bogusław Wróbel sent to
+Klaus Schmeh on 23 Oct 2026 as "the second part of this document". It is most likely the upper half of the page
+whose lower half holds the letter text (`transcription.md`).
 Checked digit by digit against the image. The typewriter has no `1` key: every 1 is typed as a capital **I**. This is
 kept as `I` below and treated as 1 in the analysis.
 
@@ -94,5 +96,5 @@ None of these changes the statistics in any meaningful way.
 
 - The image is cut off at the bottom, so the blocks may continue.
 - There is a handwritten X at the end of block 2, line 8, and a large handwritten mark at the top centre.
-- The header style (`UHG. Yc. 002`, `Ya. 009`, `Ya. I00`) matches the letter document (`UHV. Y. Pal. 002`).
+- The header style (`UHG. Yc. 002`, `Ya. 009`, `Ya. I00`) matches the letter part (`UHV. Y. Pal. 002`).
 - The letter pairs `FF ZT AA / RT RE IU` are themselves doubled letters or adjacent QWERTZ keys.

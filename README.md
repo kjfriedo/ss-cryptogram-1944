@@ -1,6 +1,6 @@
 # SS cryptogram (1944/45): transcription and randomness analysis
 
-An analysis of the typed "SS cryptogram" published by Klaus Schmeh on 22 October 2026 in
+An analysis of both parts (letters and numbers) of the typed "SS cryptogram" published by Klaus Schmeh on 22 October 2026 in
 [Who can decipher this message from World War II?](https://klausschmeh.net/who-can-decipher-this-message-from-world-war-ii/).
 Bogusław Wróbel found the document in the archives of the Polish Military Mission in Berlin, and it is said to concern
 the hiding of cultural assets in Lower Silesia.
@@ -24,11 +24,15 @@ explanation is keyboard mashing on a typewriter: filler, a decoy or a typing tes
 - **Line breaks reset the pattern.** Adjacent-key pairs make up 54 % within lines but only 6 of 34 (≈ 18 %) across line ends, so each line is a separate hand movement.
 - **Robust to the uncertain readings.** Reading the uncertain `[i|f]` glyphs as `f` does not change the result (52.6 % adjacent keys, z ≈ 22.5).
 
-## Second document: numeric "cipher" (UHG. Yc. 002)
+## Second part of the document: numbers (UHG. Yc. 002)
 
-Bogusław Wróbel supplied a second sheet from the same series: 542 typed digits in three blocks, plus a small
-"key table" (`Ya. I00`, digit pairs and the letter pairs `FF ZT AA / RT RE IU`). It shows the same keyboard
-signature, this time on the typewriter's number row:
+On 23 October 2026 Bogusław Wróbel sent Klaus Schmeh "the second part of this document". The accompanying
+transcription is titled *Szyfr – górna część* (Polish for "cipher – upper part"). It is most likely the upper half
+of the same page, whose lower half holds the letter text analysed above. Both images are cropped at the join:
+the letter image shows remnants of text above it, and the number image is cut off at the bottom.
+
+The upper part contains 542 typed digits in three blocks and a small "key table" (`Ya. I00`, digit pairs and the
+letter pairs `FF ZT AA / RT RE IU`). It shows the same keyboard signature, this time on the typewriter's number row:
 
 | Test (542 digits) | Document | Shuffled digits (3,000×) |
 |---|---|---|
