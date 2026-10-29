@@ -1,3 +1,5 @@
+> As posted on Klaus Schmeh's blog. Some statements were corrected later; see `docs/blog-comment-followup.md` and the *Limitations* section of the README.
+
 The number part shows the same signature as the letter part: keyboard mashing, this time on the typewriter's number row. (Note that the machine had no "1" key, so every 1 is a typed capital I.)
 
 **Tests** (542 digits, each compared with 3,000 shuffles of the same digits):

@@ -1,3 +1,5 @@
+> As posted on Klaus Schmeh's blog. Some statements were corrected later; see `docs/blog-comment-followup.md` and the *Limitations* section of the README.
+
 I looked at this cryptogram and I believe it is not a cipher at all but keyboard mashing on a German QWERTZ typewriter.
 
 **Transcript.** The three typed blocks should be read one after another (column by column), not row by row across the blocks. My reading from the high-resolution image differs in three or four places: row 2 *was[i/f]tzy*, row 7 *xfr[i/f]ews…*, row 18 *…cxx[i/f]gdfuam*, and the final group, which is *hgfmuzzaa* rather than *hgfnuzzaa*. In the three i/f cases the glyph lacks both the hook of every other "f" and the dot of the other "i"s. With this transcript the index of coincidence comes out at 4.9 %, not 6.8 %.

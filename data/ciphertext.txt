@@ -36,6 +36,5 @@ etziojhbnxcxsyfss
 rrederfcxvgvswuht
 trfgbvzujhuedvtgh
 sertfbvcxdcxysdda
-# Final group
-eet
-hgf[m|n]uzzaa
+# Final group (one physical line; the space is typed but ignored in the analysis)
+eet hgf[m|n]uzzaa

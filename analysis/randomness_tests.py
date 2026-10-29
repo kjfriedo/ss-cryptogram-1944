@@ -15,7 +15,7 @@ def load(path,alt):
             if "Block" in raw: cur=[]; blocks.append(cur)
             elif "Final" in raw: cur=None
             continue
-        l=re.sub(r"\[(\w)\|(\w)\]",lambda m:m.group(2 if alt else 1),raw)
+        l=re.sub(r"\[(\w)\|(\w)\]",lambda m:m.group(2 if alt else 1),raw).replace(' ','')
         lines.append(l)
         if cur is not None: cur.append(l)
     return lines,blocks
@@ -101,7 +101,8 @@ for n in names:
     out.append(f"{n:16s}"+''.join(f"{S[k][n]:12.3f}" for k in texts)+f"   shuffled={sum(s[n] for s in sh)/len(sh):.3f}")
 
 out.append("\nPermutation tests (2000 shuffles of the same letters), z-score and one-sided p-value (greater):")
-for nm,f in [('adjacent_keys',adj),('-key_distance',lambda t:-meand(t)),('MI_digram',mi),('aba',pal),('rep3',lambda t:repeats(t,3)),('rep4',lambda t:repeats(t,4)),('-bz2',lambda t:-comp(t)[0]),('-ApEn2',lambda t:-apen(t))]:
+for nm,f in [('adjacent_keys',adj),('-key_distance',lambda t:-meand(t)),('MI_digram',mi),('aba',pal),('rep3',lambda t:repeats(t,3)),('rep4',lambda t:repeats(t,4)),('-bz2',lambda t:-comp(t)[0])]:
+    # ApEn is reported descriptively only: on 575 letters its 2-/3-gram estimates are too sparse to test.
     o,m,sd,z,p=perm_p(CT,f)
     out.append(f"  {nm:16s} obs={o:8.3f} null={m:8.3f}±{sd:6.3f} z={z:7.2f} p={p:.4f}")
 
@@ -112,7 +113,7 @@ out.append("  "+' '.join(f"{k}:{kappa(CT,k):.3f}" for k in range(1,21))+f"   ref
 # periodic IC
 def per_ic(t,p):
     return sum(mono(t[i::p])[1] for i in range(p))/p
-out.append("\nMean column IC at period p (Vigenere test):")
+out.append("\nMean column IC at period p (detects only simple periodic keys up to p=17 in this reading order):")
 out.append("  "+' '.join(f"{p}:{per_ic(CT,p):.3f}" for p in range(1,18)))
 
 # top bigrams/trigrams
@@ -133,7 +134,7 @@ def walk(n):
         else: s.append(random.choice([k for k in keys if k in LEFT] if random.random()<.6 else keys))
     return ''.join(s)
 W=[stats(walk(len(CT))) for _ in range(200)]
-out.append("\nKeyboard-mashing model (random walk on QWERTZ, 68 % step to an adjacent key), mean of 200 runs:")
+out.append("\nNaive random-walk model (68 % step to a random adjacent key), mean of 200 runs.\nNOTE: this model does NOT fit (too many adjacent steps and aba patterns); see heldout_model.py for a directional model:")
 for n in names: out.append(f"  {n:16s} model={sum(w[n] for w in W)/len(W):8.3f}   cryptogram={S['cryptogram'][n]:8.3f}")
 
 # per-block consistency
@@ -143,5 +144,12 @@ for nm,b in [('block1',''.join(B1)),('block2',''.join(B2)),('block3',''.join(B3)
 # line-boundary transitions
 cross=[(a[-1],b[0]) for a,b in zip(LINES,LINES[1:])]
 out.append(f"Adjacent-key transitions across line ends: {sum(kdist(a,b)<=1.1 for a,b in cross)}/{len(cross)} (within lines {sum(sum(kdist(l[i],l[i+1])<=1.1 for i in range(len(l)-1)) for l in LINES)/sum(len(l)-1 for l in LINES):.2f})")
+# common-phase boundary test: keep the whole stream, shift the line-end mask through all positions
+cyc=[kdist(CT[i],CT[(i+1)%len(CT)])<=1.1 for i in range(len(CT))]
+ends=list(itertools.accumulate(len(l) for l in LINES))[:-1]
+ends=[e-1 for e in ends]
+obs=sum(cyc[e] for e in ends)
+ph=[sum(cyc[(e+j)%len(CT)] for e in ends) for j in range(len(CT))]
+out.append(f"Common-phase test: {sum(x<=obs for x in ph)} of {len(CT)} shifts of the line-end mask give <= {obs} adjacent pairs (fraction {sum(x<=obs for x in ph)/len(CT):.4f}; mean {sum(ph)/len(ph):.1f})")
 if args.out: open(args.out,'w',encoding='utf-8').write('\n'.join(out)+'\n')
 print('\n'.join(out))
