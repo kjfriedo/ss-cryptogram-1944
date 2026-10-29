@@ -43,7 +43,7 @@ Possible purposes include filler, a decoy, a typing exercise, or carelessly type
 
 ## Held-out block test
 
-Following the independent audit, a directional keyboard model was fitted to block 1 only, frozen, and evaluated
+Following the [independent audit](audit/2026-10-29/), a directional keyboard model was fitted to block 1 only, frozen, and evaluated
 on blocks 2–3 (`analysis/heldout_model.py`, `results/heldout_model_results.txt`). Step classes are: same key,
 the six neighbour directions, and a jump.
 
@@ -67,7 +67,7 @@ the six neighbour directions, and a jump.
 
 ## Limitations and alternative explanations
 
-An independent audit (29 Oct 2026) reproduced all core numbers and pointed out overstatements in the first
+An [independent audit (29 Oct 2026)](audit/2026-10-29/) reproduced all core numbers and pointed out overstatements in the first
 version of this README. These have been corrected:
 
 - **The frequencies are not flat.** "Flat frequencies, IC close to random" was wrong wording; see above.
@@ -133,6 +133,7 @@ See `data/numeric_transcription.md`, `analysis/numeric_tests.py` and `results/nu
 | `data/numeric_transcription.md`, `analysis/numeric_tests.py`, `results/numeric_test_results.txt` | Number part |
 | `docs/blog-comment.md`, `docs/blog-comment-numbers.md` | Comments as posted on Schmeh's blog |
 | `docs/blog-comment-followup.md` | Follow-up comment with corrections |
+| `audit/2026-10-29/` | Independent audit: report (Slovak), English summary, script and results |
 
 ## Transcription notes
 
